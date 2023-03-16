@@ -4,9 +4,10 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from .models import Profile
 
-from django.urls import reverse_lazy
+
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.auth.forms import PasswordResetForm
+from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 
 
@@ -78,4 +79,11 @@ def user_update(request, pk):
 def main_page(request):
     users = User.objects.all()
     return render(request, 'main_page.html', {'users': users})
+
+
+class ForgotPasswordView(PasswordResetView):
+    template_name = 'forgot_password.html'
+    success_url = reverse_lazy('password_reset_done')
+    form_class = PasswordResetForm
+      
 

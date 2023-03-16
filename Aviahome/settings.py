@@ -131,16 +131,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
-
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.example.com'
-EMAIL_PORT = 587
+# smtp
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'programist365@example.com'
-EMAIL_HOST_PASSWORD = 'your_email_password'
-
-EMAIL_BACKEND  =  "django.core.mail.backends.filebased.EmailBackend" 
-EMAIL_FILE_PATH  =  BASE_DIR  /  "sent_emails"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'testuserdj9@gmail.com'
+EMAIL_HOST_PASSWORD = 'ggjvougyefmwpwvn'
+EMAIL_PORT = 587
