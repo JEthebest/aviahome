@@ -1,11 +1,28 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
 {% block content %}
-    <div class="user-list">
-        <h2>User List</h2>
-        <ul>
-            {% for user in users %}
-                <li>{{ user.username }}</li>
-            {% endfor %}
-        </ul>
+  <h1>Product</h1>
+  <div class="row mb-3">
+    <div class="col-6">
     </div>
-{% endblock content %}
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>User</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.username }}</td>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="2">No locations found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %} 
