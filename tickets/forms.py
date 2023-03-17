@@ -6,3 +6,6 @@ class PnrForm(forms.ModelForm):
         model = Pnr
         fields = ['code']
         labels = {'code': 'PNR код'}
+        widgets = {
+            'code': forms.TextInput(attrs={'class': 'form-control', 'style': 'width: 100%'}),
+        }

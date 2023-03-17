@@ -2,7 +2,10 @@ from tort.models import Airport, Company
 
 def decoder(code):
     company = code[0:2]
-    flight_number = code[0:6].strip()
+
+    flight_number = f"{code[0:2].strip()} {code[2:6].strip()} "
+
+
     flight_date = code[9:14].strip()
 
     flight_departure_time = code[36:40]
@@ -13,8 +16,10 @@ def decoder(code):
 
     flight_departure_airport_code = code[17:20]
     flight_arrival_airport_code = code[20:23]
-    flight_airplane = code[48:51]
-    flight_plane_type = code[52]
+
+    flight_airplane = code[48:51]#не надо по тз
+
+    flight_plane_type = code[52]#не надо по тз
 
     month_names = {
         "JAN": "янв.", "FEB": "фев.", "MAR": "мар.", "APR": "апр.",
@@ -53,10 +58,9 @@ def decoder(code):
     День недели: {week_day}
     Время вылета: {departure_time}
     Время посадки: {arrival_time}
+    Место вылета: {departure_airport} Airport
+    Место посадки: {arrival_airport} Airport
     Номер рейса: {flight_number}
-    Тип билета: {flight_plane_type}
-    Место вылета: {departure_airport}
-    Место посадки: {arrival_airport}
     Авиакомпания: {your_company}
     Класс: {dt}
     """
