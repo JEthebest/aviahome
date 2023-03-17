@@ -2,11 +2,11 @@ from rest_framework.routers import DefaultRouter
 
 from .views import (
     AirportViewSet,
-    CityViewSet,
+    CompanyViewSet,
 )
 
 router = DefaultRouter()
 router.register('airport',AirportViewSet,basename='airport')
-router.register('city',CityViewSet,basename='city')
+router.register('company',CompanyViewSet,basename='company')
 
 urlpatterns = router.urls
