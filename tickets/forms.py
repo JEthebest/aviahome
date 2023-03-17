@@ -1,5 +1,5 @@
 from django import forms
-from .models import Pnr
+from tickets.models import Pnr
 
 class PnrForm(forms.ModelForm):
     class Meta:
