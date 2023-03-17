@@ -1,8 +1,12 @@
 from django.contrib import admin
 
-from .models import Airport
+from .models import Airport, Company
 
 
 @admin.register(Airport)
-class FoodAdmin(admin.ModelAdmin):
+class AirportAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
     pass
