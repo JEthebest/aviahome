@@ -7,9 +7,9 @@ from django.urls import reverse
 
 
 class Profile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    phone = models.CharField(max_length=200, blank=True)
-
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    is_moderator = models.BooleanField(default=False)
+    
     def __str__(self):
         return f"{self.user.username}'s profile"
     
