@@ -5,3 +5,4 @@ class PnrForm(forms.ModelForm):
     class Meta:
         model = Pnr
         fields = ['code']
+        labels = {'code': 'PNR код'}

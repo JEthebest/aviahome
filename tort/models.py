@@ -20,7 +20,7 @@ class Airport(models.Model):
         verbose_name_plural = 'Аэропорта'
 
     def __str__(self):
-        return f"{self.iata_code} - {self.name}"
+        return f"{self.name}"
     
 class Company(models.Model):
     iata_code = models.CharField(
@@ -41,4 +41,4 @@ class Company(models.Model):
         verbose_name_plural = 'Компании'
 
     def __str__(self):
-        return f"{self.iata_code} - {self.name}"
+        return f"{self.name}"
